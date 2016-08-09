@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hide Rows</title>
+	<meta chartset="UTF-8">
+	<style type="text/css">
+		.container{
+			width:500px;
+			margin:50px auto;
+		}
+		table td{
+			padding: 5px;
+		}
+		input[type="button"]{
+			padding: 5px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<table border="1" id="myTbl">
+			<tr><td>Row 1</td></tr>
+			<tr><td>Row 2</td></tr>
+			<tr><td>Row 3</td></tr>
+			<tr><td>Row 4</td></tr>
+			<tr><td>Row 5</td></tr>
+			<tr><td>Row 6</td></tr>
+			<tr><td>Row 7</td></tr>
+			
+		</table>
+		<br><br>
+		<input type="button" value="Hide Odd Rows">
+	</div>
+
+	<script type="text/javascript">
+		var btn = document.getElementsByTagName("input")[0];
+
+		var tbl = document.getElementById("myTbl");
+		var rows = tbl.getElementsByTagName("tr");
+		console.log(rows.length);
+
+		btn.addEventListener("click", function(){
+			hideOdd();
+		});
+
+		function hideOdd(){
+			for(var iCtr = 0 ; iCtr < rows.length; iCtr++){
+				if(iCtr % 2 == 0){
+					console.log(rows[iCtr]);
+					rows[iCtr].style.display = "none";
+				}
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>
